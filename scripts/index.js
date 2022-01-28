@@ -1,6 +1,6 @@
 async function getData() {
   let data = await fetch(
-    `https://api.imgur.com/3/gallery/top/viral/month/1?showViral=true&mature=true&album_previews=true`,
+    `https://api.imgur.com/3/gallery/search/viral/month/1?q=top&q_type=jpg`,
     {
       method: "GET",
       headers: {
@@ -23,7 +23,7 @@ function displayData({ data }) {
     title.innerText = el.title;
 
     let img = document.createElement("img");
-    img.src = el.link || "./images/demoimg.jpg";
+    img.src = el?.images[0]?.link || "./images/demoimg.jpg";
     let views = document.createElement("p");
     views.innerText = "Views - " + el.views;
 
