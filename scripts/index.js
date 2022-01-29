@@ -16,7 +16,11 @@ getData();
 
 function displayData({ data }) {
   console.log(data);
-  let parent = document.getElementById("imgurPosts");
+  let parent1 = document.getElementById("postParent1");
+  let parent2 = document.getElementById("postParent2");
+  let parent3 = document.getElementById("postParent3");
+  let parent4 = document.getElementById("postParent4");
+  let parent5 = document.getElementById("postParent5");
   data.forEach((el, i) => {
     let mainDiv = document.createElement("div");
     let title = document.createElement("p");
@@ -34,6 +38,17 @@ function displayData({ data }) {
     textdiv.append(title, views);
 
     mainDiv.append(imgdiv, textdiv);
-    parent.append(mainDiv);
+
+    if (i <= 10) {
+      parent1.append(mainDiv);
+    } else if (i <= 20 && i > 10) {
+      parent2.append(mainDiv);
+    } else if (i <= 30 && i > 20) {
+      parent3.append(mainDiv);
+    } else if (i <= 40 && i > 30) {
+      parent4.append(mainDiv);
+    } else {
+      parent5.append(mainDiv);
+    }
   });
 }

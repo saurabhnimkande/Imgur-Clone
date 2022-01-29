@@ -214,7 +214,7 @@ body {
   margin-bottom: 10px;
   color: #9c9eb2;
 }
-#imgurPosts {
+/* #imgurPosts {
   padding-top: 50px;
   background-color: #2e3035;
   display: grid;
@@ -239,4 +239,38 @@ body {
 }
 #imgurPosts > div:hover {
   background-color: #707480;
+} */
+#imgurPosts {
+  display: flex;
+  padding-top: 50px;
+  background-color: #2e3035;
+  margin: auto;
+  padding-left: 60px;
+  padding-bottom: 50px;
+  gap: 20px;
+}
+#imgurPosts > div {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 18%;
+}
+#imgurPosts > div > div {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 18%;
+  border-radius: 5px;
+  color: white;
+  background-color: #474a52;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+#imgurPosts > div > div:hover {
+  background-color: #707480;
+}
+#imgurPosts > div > div > div > img {
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+}
+#imgurPosts > div > div > div:nth-child(2) {
+  padding: 10px;
 }
