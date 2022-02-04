@@ -1,6 +1,6 @@
-async function getData() {
+async function getData(type) {
   let data = await fetch(
-    `https://api.imgur.com/3/gallery/search/viral/month/1?q=top&q_type=jpg`,
+    `https://api.imgur.com/3/gallery/search/viral/month/1?q=${type}&q_type=jpg`,
     {
       method: "GET",
       headers: {
@@ -12,7 +12,14 @@ async function getData() {
     .then((res) => res.json())
     .then((ans) => displayData(ans));
 }
-getData();
+getData("top");
+
+function searchText() {
+  let input = document.getElementById("inputsearch");
+  console.log(input.value);
+  let val = input.value;
+  getData(val);
+}
 
 function displayData({ data }) {
   console.log(data);
@@ -21,6 +28,13 @@ function displayData({ data }) {
   let parent3 = document.getElementById("postParent3");
   let parent4 = document.getElementById("postParent4");
   let parent5 = document.getElementById("postParent5");
+
+  parent1.innerHTML = null;
+  parent2.innerHTML = null;
+  parent3.innerHTML = null;
+  parent4.innerHTML = null;
+  parent5.innerHTML = null;
+
   data.forEach((el, i) => {
     let mainDiv = document.createElement("div");
     let title = document.createElement("p");

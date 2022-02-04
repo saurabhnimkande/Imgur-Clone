@@ -38,6 +38,7 @@ body {
 .searchicon {
   padding-top: 2px;
   color: white;
+  cursor: pointer;
 }
 #navbar > div:nth-child(5) {
   flex-basis: 150px;
